@@ -38,7 +38,7 @@ button:disabled {
 
 /* 3. Selectori Structurali: Stilizare pentru al 3-lea rând (tr:nth-child(3)) și .delete-row */
 tr:nth-child(3) {
-  background-color: #ffeaea;
+  background-color: #ffeaeb;
 }
 
 .delete-row {
