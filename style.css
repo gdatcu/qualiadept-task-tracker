@@ -38,11 +38,11 @@ button:disabled {
 
 /* 3. Selectori Structurali: Stilizare pentru al 3-lea rând (tr:nth-child(3)) și .delete-row */
 tr:nth-child(3) {
-  background-color: #ffeaeb;
+  background-color: #ffeaea;
 }
 
 .delete-row {
-  background-color: #e74c3c;
+  background-color: #e74c3f;
 }
 
 .delete-row:hover {
