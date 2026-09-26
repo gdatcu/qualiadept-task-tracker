@@ -3,34 +3,60 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Task Tracker Login</title>
+  <title>Task Tracker</title>
+  <!-- Cerința 1: Conectează fișierul extern style.css aici -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <header>
+    <!-- Cerința 2: Navbar flexibil cu clasa navbar, id logo și data-testid btn-login -->
+    <nav class="navbar">
+      <div id="logo">Task Tracker</div>
+      <button data-testid="btn-login">Log In</button>
+    </nav>
+  </header>
 
-  <div class="login-container">
-    <form>
-      <label for="login-email"> Email </label>
-      <input
-                    type="email"
-                    id="login-email"
-                    data-testid="input-email"
-                >
-      <label for="login-password"> Password </label>
-      <input
-                    type="password"
-                    id="login-password"
-                    data-testid="input-password"
-                >
-      <button
-                    type="submit"
-                    data-testid="btn-submit-login"
-                >
-                    Log in
-                </button>
-    </form>
-  </div>
+  <main>
+    <div class="login-container">
+      <form>
+        <input type="email" id="login-email" data-testid="input-email" placeholder="Email">
+        <input type="password" id="login-password" data-testid="input-password" placeholder="Parolă">
+        <button data-testid="btn-submit-login">Log In</button>
+      </form>
+    </div>
 
+    <section class="task-input-section">
+      <form id="add-task-form">
+        <input type="text" id="task-name" placeholder="Nume Task">
+        <!-- Cerința 4: Adaugă atributul disabled pentru butonul de salvare -->
+        <button type="submit" disabled data-testid="submit-task-btn">Salvează Task</button>
+      </form>
+    </section>
+
+    <section class="task-history-section">
+      <table id="history-table">
+        <tbody>
+          <tr>
+            <td>#1001</td>
+            <td>Task 1</td>
+          </tr>
+          <tr>
+            <td>#1002</td>
+            <td>Task 2</td>
+          </tr>
+          <!-- Cerința 3: Adaugă al 3-lea rând cu clasa delete-row pe butonul de ștergere -->
+          <tr>
+            <td>#1003</td>
+            <td>
+              <button class="delete-row">Șterge</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <script src="app.js"></script>
 </body>
 
 </html>
