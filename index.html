@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="ro">
-
 <head>
   <meta charset="UTF-8">
   <title>Task Tracker</title>
   <!-- Cerința 1: Conectează fișierul extern style.css aici -->
-  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
   <header>
     <!-- Cerința 2: Navbar flexibil cu clasa navbar, id logo și data-testid btn-login -->
-    <nav class="navbar">
-      <div id="logo">Task Tracker</div>
-      <button data-testid="btn-login">Log In Button</button>
+    <nav>
+      <div>Task Tracker</div>
+      <button data-testid="btn-login">Log In</button>
     </nav>
   </header>
 
@@ -30,7 +27,7 @@
       <form id="add-task-form">
         <input type="text" id="task-name" placeholder="Nume Task">
         <!-- Cerința 4: Adaugă atributul disabled pentru butonul de salvare -->
-        <button type="submit" disabled data-testid="submit-task-btn">Salvează Task</button>
+        <button type="submit" data-testid="submit-task-btn">Salvează Task</button>
       </form>
     </section>
 
@@ -49,7 +46,7 @@
           <tr>
             <td>#1003</td>
             <td>
-              <button class="delete-row">Șterge</button>
+              <button>Șterge</button>
             </td>
           </tr>
         </tbody>
@@ -58,5 +55,4 @@
   </main>
   <script src="app.js"></script>
 </body>
-
 </html>
