@@ -3,59 +3,36 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Task Tracker</title>
-  <!-- Cerința 1: Conectează fișierul extern style.css aici -->
+  <title>QA Task Tracker Pro</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <header>
-    <!-- Cerința 2: Navbar flexibil cu clasa navbar, id logo și data-testid btn-login -->
-    <nav class="navbar">
-      <div id="logo">Task Tracker</div>
-      <button data-testid="btn-login">Log In Button</button>
-    </nav>
+  <header class="navbar">
+    <h1 id="logo">QA Task Tracker</h1>
+    <span id="network-status" class="status-indicator online">API Online</span>
   </header>
 
-  <main>
-    <div class="login-container">
-      <form>
-        <input type="email" id="login-email" data-testid="input-email" placeholder="Email">
-        <input type="password" id="login-password" data-testid="input-password" placeholder="Parolă">
-        <button data-testid="btn-submit-login">Log In</button>
-      </form>
-    </div>
-
-    <section class="task-input-section">
+  <main class="container">
+    <section class="card input-section">
+      <h2>Adaugă un Task Nou</h2>
       <form id="add-task-form">
-        <input type="text" id="task-name" placeholder="Nume Task">
-        <!-- Cerința 4: Adaugă atributul disabled pentru butonul de salvare -->
-        <button type="submit" disabled data-testid="submit-task-btn">Salvează Task</button>
+        <div class="form-group">
+          <label for="task-name">Nume Task:</label>
+          <input type="text" id="task-name" placeholder="ex: Testare login" data-testid="input-task-name">
+          <small id="error-msg" class="error-text" data-testid="error-message" style="display: none;">Numele task-ului nu poate fi gol!</small>
+        </div>
+        <button type="submit" id="submit-task-btn" data-testid="submit-task-btn" disabled>Salvează Task</button>
       </form>
     </section>
 
-    <section class="task-history-section">
-      <table id="history-table">
-        <tbody>
-          <tr>
-            <td>#1001</td>
-            <td>Task 1</td>
-          </tr>
-          <tr>
-            <td>#1002</td>
-            <td>Task 2</td>
-          </tr>
-          <!-- Cerința 3: Adaugă al 3-lea rând cu clasa delete-row pe butonul de ștergere -->
-          <tr>
-            <td>#1003</td>
-            <td>
-              <button class="delete-row">Șterge</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <section class="card list-section">
+      <h2>Task-uri Active</h2>
+      <div id="loading-spinner" class="spinner" data-testid="loading-spinner">Se încarcă datele de la server...</div>
+      <ul id="task-list" class="task-list" data-testid="task-list"></ul>
     </section>
   </main>
+
   <script src="app.js"></script>
 </body>
 
